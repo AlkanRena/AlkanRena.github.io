@@ -1,0 +1,42 @@
+
+main {
+    display: flex !important;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: dimgray;
+    color: white;
+}
+
+.h1{
+    margin: 0 auto;
+    align-self: center;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    font-size: 36px;
+}
+
+.h2 {
+    margin: 0 auto;
+    align-self: center;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    font-size: 30px;
+}
+
+div {
+    margin: 0 auto;
+    align-self: center;
+
+}
+
+#bootstrap {
+    height: 100vh;
+    background-color: dimgray;
+    color: white;
+}
