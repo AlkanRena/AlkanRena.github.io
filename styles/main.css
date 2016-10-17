@@ -36,7 +36,137 @@ div {
 }
 
 #bootstrap {
+    position: fixed;
+    top: -95vh;
+    left: -95vw;
+    z-index: 1;
     height: 100vh;
-    background-color: dimgray;
+    width: 100vw;
+    padding: 5vh 5vw;
+    background-color: black;
     color: white;
+}
+
+#bootstrap:hover {
+    /*top:3vh;*/
+    /*left: 3vw;*/
+    animation-name: topblock;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    height: 94vh;
+    width: 94vw;
+}
+
+@keyframes topblock {
+    0%   {top: -75vh;
+        left: -75vw;}
+    25%  {top: -55vh;
+        left: -55vw;}
+    50%  {top: -25vh;
+        left: -25vw;}
+    100% {top: 3vh;
+        left: 3vw;}
+}
+
+#cardgame {
+    position: fixed;
+    top: 95vh;
+    left: -95vw;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    padding: 5vh 5vw;
+    background-color: white;
+    color: black;
+}
+
+#cardgame:hover {
+    /*top: 3vh;*/
+    /*left: 3vw;*/
+    animation-name: bottomblock;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    height: 94vh;
+    width: 94vw;
+}
+
+@keyframes bottomblock {
+    0%   {top: 75vh;
+        left: -75vw;}
+    25%  {top: 55vh;
+        left: -55vw;}
+    50%  {top: 25vh;
+        left: -25vw;}
+    100% {top: 3vh;
+        left: 3vw;}
+}
+
+#angularbox {
+    position: fixed;
+    top: -95vh;
+    left: 95vw;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    padding: 5vh 5vw;
+    background-color: darkgrey;
+    color: grey;
+}
+
+#angularbox:hover {
+    /*top: 3vh;*/
+    /*left: 3vw;*/
+    animation-name: toprightblock;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    height: 94vh;
+    width: 94vw;
+}
+
+@keyframes toprightblock {
+    0%   {top: -75vh;
+        left: 75vw;}
+    25%  {top: -55vh;
+        left: 55vw;}
+    50%  {top: -25vh;
+        left: 25vw;}
+    100% {top: 3vh;
+        left: 3vw;}
+}
+
+#phpbox {
+    position: fixed;
+    top: 95vh;
+    left: 95vw;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    padding: 5vh 5vw;
+    background-color: black;
+    color: grey;
+}
+
+#phpbox:hover {
+    /*top: 3vh;*/
+    /*left: 3vw;*/
+    animation-name: phpblock;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    height: 94vh;
+    width: 94vw;
+}
+
+@keyframes phpblock {
+    0%   {top: 75vh;
+        left: 75vw;}
+    25%  {top: 55vh;
+        left: 55vw;}
+    50%  {top: 25vh;
+        left: 25vw;}
+    100% {top: 3vh;
+        left: 3vw;}
 }
