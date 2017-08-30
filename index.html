@@ -3,56 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Strona Wizytówka</title>
-
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="stylesheet" type="text/css" href="styles/reset.css">
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap-3.3.6-dist/css/bootstrap-theme.css">
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap-3.3.6-dist/css/bootstrap.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/css/uikit.min.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/dim.css">
+    <link rel="stylesheet" type="text/css" href="styles/grid.css">
+    <link rel="stylesheet" type="text/css" href="styles/game.css">
 </head>
 <body>
 <main>
-    <span class="h1">
-        Cześć, Jestem programistą Front-End, a to moja wizytówka.
-    </span>
-    <span class="h2">
+    <h1>
+        Cześć, Jestem programistą Front-End, a to moja wizytówka. Przy okazji troszkę różnego kodu.
+    </h1>
+    <h2>
         Nazywam się Dawid Kubić, a oto mój mail: dawid.kubic@gmail.com
-    </span>
-    <div>
-       <span>
-            Chciałbyś wiedzieć o mnie więcej niż to co można tu zauważyć.
-        </span>
-        <span>
-            Wejdzi na <a href="https://github.com/AlkanRena">GitHub</a> albo <a href="https://pl.linkedin.com/in/dawidkubic">LinkedIn.</a>
-        </span>  
-    </div>
+    </h2>
+    <article>
+        <div class="button">
+            <div id="autoAdd_button">
+                Automat
+            </div>
+            <div id="game_button">
+                Gra
+            </div>
+            <div id="grid_button">
+                Grid
+            </div>
+            <div id="dim_button">
+                3D
+            </div>
+        </div>
+    </article>
 </main>
-<div id="bootstrap">
-    <p class="buttonBootstrap">Co moge więcej o sobie powiedzieć, na pewno wiem jak pracuję Bootstrap.</p>
-    <p class="buttonBootstrap">Ale to podobno każdy wie.</p>
-    <p class="buttonBootstrap">A może nie każdy potrafi odpalić bootstrapa z przycisku.</p>
-    <p class="buttonBootstrap">Hmmm to jest pomysł odpalić bootstrapa z przycisku.</p>
-    <p class="buttonBootstrap">W sumie trzeba dodać jeszcze ikonkę.</p>
-    <p class="buttonBootstrap">O właśnie w bootstrapie też są.</p>
-    <p class="buttonBootstrap">Więc tak weźmiesz czarno kure,... kurczę to chyba nie to.</p>
-    <p class="buttonBootstrap">O wiem weżmiesz JS pokropisz troszkę JQuery i ząłączysz z przycisku.</p>
-    <p class="buttonBootstrap">No dobra ale gdzie jest ten przycisk.</p>
-    <p class="buttonBootstrap">A wiem w bibliotece Bootstrapa przynajmnie Google tak mówią.</p>
-    <p class="buttonBootstrap">O właśnie tu -></p>
-    <button id="bootstrapbutton" class="glyphicon glyphicon-th buttonBootstrap" onclick="LetItGo()"></button>
-</div>
-<div id="cardgame">
-    Tu będzie gra specjalnie stworzona dla potrzeb strony w JS.
-</div>
-<div id="angularbox">
-    Tu będzie Angular.
-</div>
-<div id="phpbox">
-    PHP komunikacja z serwerem.
-</div>
+<section id="autoAdd" data-include="autoAdd"></section>
+<section id="game" data-include="game"></section>
+<section id="grid" data-include="grid"></section>
+<section id="dim" data-include="dim"></section>
 
 
-<script type="text/javascript"  src="scripts/jQuery/jquery-3.0.0.min.js"></script>
-<script type="text/javascript"  src="scripts/bootstrapScript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/js/uikit-icons.min.js"></script>
+<script type="text/javascript" src="scripts/global.js"></script>
+<script type="text/javascript" src="scripts/bootstrapScript.js"></script>
+<script type="text/javascript" src="scripts/game.js"></script>
+<script type="text/javascript" src="scripts/game_functions.js"></script>
 </body>
 </html>

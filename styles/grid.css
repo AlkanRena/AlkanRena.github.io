@@ -1,0 +1,55 @@
+.grid-container {
+    display: grid;
+    min-width: 100vw;
+    max-width: 100vw;
+    min-height: 100vw;
+    max-height: 100vw;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    justify-content: stretch;
+    /*grid-template-areas:
+            "aa ba ca da ea fa ga ha ia ja ka ma na oa pa ra sa ta ua wa"
+            "ab bb cb db eb fb gb hb ib jb kb mb nb ob pb rb sb tb ub wb"
+            "ac bc cc dc ec fc gc hc ic jc kc mc nc oc pc rc sc tc uc wc"
+            "ad bd cd dd ed fd gd hd id jd kd md nd od pd rd sd td ud wd"
+            "ae be ce de ee fe ge he ie je ke me ne oe pe re se te ue we"
+            "af bf cf df ef ff gf hf if jf kf mf nf of pf rf sf tf uf wf"
+            "ag bg cg dg eg fg gg hg ig jg kg mg ng og pg rg sg tg ug wg"
+            "ah bh ch dh eh fh gh hh ih jh kh mh nh oh ph rh sh th uh wh"
+            "ai bi ci di ei fi gi hi ii ji ki mi ni oi pi ri si ti ui wi"
+            "aj bj cj dj ej fj gj hj ij jj kj mj nj oj pj rj sj tj uj wj"
+            "ak bk ck dk ek fk gk hk ik jk kk mk nk ok pk rk sk tk uk wk"
+            "al bl cl dl el fl gl hl il jl kl ml nl ol pl rl sl tl ul wl"
+            "am bm cm dm em fm gm hm im jm km mm nm om pm rm sm tm um wm"
+            "an bn cn dn en fn gn hn in jn kn mn nn on pn rn sn tn un wn"
+            "ao bo co do eo fo go ho io jo ko mo no oo po ro so to uo wo"
+            "ap bp cp dp ep fp gp hp ip jp kp mp np op pp rp sp tp up wp"
+            "ar br cr dr er fr gr hr ir jr kr mr nr or pr rr sr tr ur wr"
+            "as bs cs ds es fs gs hs is js ks ms ns os ps rs ss ts us ws"
+            "at bt ct dt et ft gt ht it jt kt mt nt ot pt rt st tt ut wt"
+            "au bu cu du eu fu gu hu iu ju ku mu nu ou pu ru su tu uu wu"
+            "aw bw cw dw ew fw gw hw iw jw kw mw nw ow pw rw sw tw uw ww";      */
+
+}
+
+.grid-container .panel {
+    min-width: 100%;
+    min-height:100%;
+    justify-self: stretch;
+
+}
+
+.panel.P1_1 {
+     grid-area: auto;
+     background-color: blue;
+ }
+
+.panel.P3_3 {
+    grid-area: auto;
+    background-color: red;
+}
+
+.panel.P6_5 {
+    grid-area: auto;
+    background-color: green;
+}

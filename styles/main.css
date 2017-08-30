@@ -5,28 +5,24 @@ main {
     align-content: center;
     justify-content: center;
     height: 100vh;
-    background-color: dimgray;
+    background-color: #696969;
     color: white;
 }
 
-.h1{
+h1{
     margin: 0 auto;
-    align-self: center;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.1;
-    color: inherit;
-    font-size: 36px;
+    text-align: center;
 }
 
-.h2 {
+h2 {
     margin: 0 auto;
-    align-self: center;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.1;
-    color: inherit;
-    font-size: 30px;
+    text-align: center;
+}
+
+article {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column;
 }
 
 div {
@@ -35,61 +31,51 @@ div {
 
 }
 
-#bootstrap {
-    position: fixed;
-    top: -95vh;
-    left: -95vw;
+section {
+    min-height: 100vh;
+    min-width: 100vw;
     z-index: 1;
-    height: 100vh;
-    width: 100vw;
-    padding: 5vh 5vw;
-    background-color: black;
-    color: white;
 }
 
-#bootstrap:hover {
-    /*top:3vh;*/
-    /*left: 3vw;*/
+#autoAdd {
+    position: fixed;
+    top: -100vh;
+    left: -100vw;
+    background-color: #f3f3f3;
+    color: #444444;
+}
+
+#autoAdd.active {
     animation-name: topblock;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
-    height: 94vh;
-    width: 94vw;
 }
 
 @keyframes topblock {
     0%   {top: -75vh;
         left: -75vw;}
-    25%  {top: -55vh;
-        left: -55vw;}
+    25%  {top: -50vh;
+        left: -50vw;}
     50%  {top: -25vh;
         left: -25vw;}
-    100% {top: 3vh;
-        left: 3vw;}
+    100% {top: 0;
+        left: 0;}
 }
 
-#cardgame {
+#game {
     position: fixed;
-    top: 95vh;
-    left: -95vw;
-    z-index: 1;
-    height: 100vh;
-    width: 100vw;
-    padding: 5vh 5vw;
-    background-color: white;
-    color: black;
+    top: 100vh;
+    left: -100vw;
+    background-color: #f3f3f3;
+    color: #444444;
 }
 
-#cardgame:hover {
-    /*top: 3vh;*/
-    /*left: 3vw;*/
+#game.active {
     animation-name: bottomblock;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
-    height: 94vh;
-    width: 94vw;
 }
 
 @keyframes bottomblock {
@@ -99,74 +85,109 @@ div {
         left: -55vw;}
     50%  {top: 25vh;
         left: -25vw;}
-    100% {top: 3vh;
-        left: 3vw;}
+    100% {top: 0;
+        left: 0;}
 }
 
-#angularbox {
+#grid {
     position: fixed;
-    top: -95vh;
-    left: 95vw;
-    z-index: 1;
-    height: 100vh;
-    width: 100vw;
-    padding: 5vh 5vw;
-    background-color: darkgrey;
-    color: grey;
+    top: -100vh;
+    left: 100vw;
+    background-color: #f3f3f3;
+    color: #444444;
 }
 
-#angularbox:hover {
-    /*top: 3vh;*/
-    /*left: 3vw;*/
+#grid.active{
     animation-name: toprightblock;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
-    height: 94vh;
-    width: 94vw;
 }
 
 @keyframes toprightblock {
     0%   {top: -75vh;
         left: 75vw;}
-    25%  {top: -55vh;
-        left: 55vw;}
+    25%  {top: -50vh;
+        left: 50vw;}
     50%  {top: -25vh;
         left: 25vw;}
-    100% {top: 3vh;
-        left: 3vw;}
+    100% {top: 0;
+        left: 0;}
 }
 
-#phpbox {
+#dim {
     position: fixed;
-    top: 95vh;
-    left: 95vw;
-    z-index: 1;
-    height: 100vh;
-    width: 100vw;
-    padding: 5vh 5vw;
-    background-color: black;
-    color: grey;
+    /*top: 100vh;
+    left: 100vw;*/
+    background-color: #f3f3f3;
+    color: #444444;
 }
 
-#phpbox:hover {
-    /*top: 3vh;*/
-    /*left: 3vw;*/
+#dim.active {
     animation-name: phpblock;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
-    height: 94vh;
-    width: 94vw;
+    height: 100vh;
+    width: 100vw;
 }
 
 @keyframes phpblock {
     0%   {top: 75vh;
         left: 75vw;}
-    25%  {top: 55vh;
-        left: 55vw;}
+    25%  {top: 50vh;
+        left: 50vw;}
     50%  {top: 25vh;
         left: 25vw;}
-    100% {top: 3vh;
-        left: 3vw;}
+    100% {top: 0;
+        left: 0;}
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+}
+
+.button > div {
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 900;
+    color: #000000;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 900;
+    color: #ffffff;
+    background-color: lightskyblue;
+}
+
+.btn:hover {
+    background-color: cornflowerblue;
 }
