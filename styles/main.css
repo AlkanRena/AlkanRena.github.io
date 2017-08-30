@@ -117,8 +117,8 @@ section {
 
 #dim {
     position: fixed;
-    top: 100vh;
-    left: 100vw;
+    /*top: 100vh;
+    left: 100vw;*/
     background-color: #f3f3f3;
     color: #444444;
 }
@@ -176,4 +176,18 @@ section {
 
 .green {
     color: green;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 900;
+    color: #ffffff;
+    background-color: lightskyblue;
+}
+
+.btn:hover {
+    background-color: cornflowerblue;
 }
