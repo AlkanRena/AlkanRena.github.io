@@ -48,22 +48,26 @@ function moveBulder() {
             $(this).remove();
 
         }
-        if (
-            (
-              ($('#player').css('grid-row-start') == $(this).css('grid-row-start')) && ($('#player').css('grid-column-start') == $(this).css('grid-column-start'))
-            ) || (
-              ((parseInt($('#player').css('grid-row-start')) + 1) == $(this).css('grid-row-start')) && (($('#player').css('grid-column-start') == $(this).css('grid-column-start')))
-            ) || (
-              ((parseInt($('#player').css('grid-row-start')) + 2) == $(this).css('grid-row-start')) && (($('#player').css('grid-column-start') == $(this).css('grid-column-start')))
-            ) || (
-              ((parseInt($('#player').css('grid-row-start')) + 3) == $(this).css('grid-row-start')) && (($('#player').css('grid-column-start') == $(this).css('grid-column-start')))
-            )
-          )
-        {
-            endgame = true
-        }
+        dead();
         return;
     })
+}
+
+function dead() {
+  if (
+      (
+        ($('#player').css('grid-row-start') == $(this).css('grid-row-start')) && ($('#player').css('grid-column-start') == $(this).css('grid-column-start'))
+      ) || (
+        ((parseInt($('#player').css('grid-row-start')) + 1) == $(this).css('grid-row-start')) && (($('#player').css('grid-column-start') == $(this).css('grid-column-start')))
+      ) || (
+        ((parseInt($('#player').css('grid-row-start')) + 2) == $(this).css('grid-row-start')) && (($('#player').css('grid-column-start') == $(this).css('grid-column-start')))
+      ) || (
+        ((parseInt($('#player').css('grid-row-start')) + 3) == $(this).css('grid-row-start')) && (($('#player').css('grid-column-start') == $(this).css('grid-column-start')))
+      )
+    )
+  {
+      endgame = true
+  }
 }
 
 function updatePoints () {
@@ -114,6 +118,7 @@ $('#game-window').ready(function () {
                     pos_x = pos_x - 3;
                     $('#player').css('grid-column-start', "" + pos_x + "");
                 }
+                dead();
                 break;
             case 38:
                 e.preventDefault();
@@ -121,6 +126,7 @@ $('#game-window').ready(function () {
                     pos_y = pos_y - 1;
                     $('#player').css('grid-row-start', "" + pos_y + "");
                 }
+                dead();
                 break;
             case 39:
                 e.preventDefault();
@@ -128,6 +134,7 @@ $('#game-window').ready(function () {
                     pos_x = pos_x + 3;
                     $('#player').css('grid-column-start', "" + pos_x + "");
                 }
+                dead();
                 break;
             case 40:
                 e.preventDefault();
@@ -135,6 +142,7 @@ $('#game-window').ready(function () {
                     pos_y = pos_y + 1;
                     $('#player').css('grid-row-start', "" + pos_y + "");
                 }
+                dead();
                 break;
         }
     });
