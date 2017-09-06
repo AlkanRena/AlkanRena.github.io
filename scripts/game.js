@@ -50,10 +50,13 @@ function moveBulder() {
         }
         if (
             (
-              $('#player').css('grid-row-start') == $(this).css('grid-row-start')) && ($('#player').css('grid-column-start') == $(this).css('grid-column-start')) ||
-              (parseInt($('#player').css('grid-row-start')) + 1) == $(this).css('grid-row-start')) && ($('#player').css('grid-column-start') == $(this).css('grid-column-start')) ||
-              (parseInt($('#player').css('grid-row-start')) + 2) == $(this).css('grid-row-start')) && ($('#player').css('grid-column-start') == $(this).css('grid-column-start')) ||
-              (parseInt($('#player').css('grid-row-start')) + 3) == $(this).css('grid-row-start')) && ($('#player').css('grid-column-start') == $(this).css('grid-column-start'))
+              ($('#player').css('grid-row-start') == $(this).css('grid-row-start')) && ($('#player').css('grid-column-start') == $(this).css('grid-column-start'))
+            ) || (
+              ((parseInt($('#player').css('grid-row-start')) + 1) == $(this).css('grid-row-start')) && (($('#player').css('grid-column-start') == $(this).css('grid-column-start')))
+            ) || (
+              ((parseInt($('#player').css('grid-row-start')) + 2) == $(this).css('grid-row-start')) && (($('#player').css('grid-column-start') == $(this).css('grid-column-start')))
+            ) || (
+              ((parseInt($('#player').css('grid-row-start')) + 3) == $(this).css('grid-row-start')) && (($('#player').css('grid-column-start') == $(this).css('grid-column-start')))
             )
         {
             endgame = true
