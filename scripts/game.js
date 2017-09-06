@@ -58,6 +58,7 @@ function moveBulder() {
             ) || (
               ((parseInt($('#player').css('grid-row-start')) + 3) == $(this).css('grid-row-start')) && (($('#player').css('grid-column-start') == $(this).css('grid-column-start')))
             )
+          )
         {
             endgame = true
         }
