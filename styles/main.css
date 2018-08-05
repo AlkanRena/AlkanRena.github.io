@@ -1,193 +1,68 @@
+/*Font system and global vars*/
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+* {
+    font-family: 'Press Start 2P', sans-serif;
+    line-height: 24px;
+}
 
-main {
-    display: flex !important;
-    flex-flow: column wrap;
-    align-content: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #696969;
+/*Grid system for website*/
+.grid-container {
+    display: grid;
+}
+
+.grid-container.one-column {
+ grid-template-columns: repeat(1 , 1fr);
+}
+.grid-container.two-column {
+ grid-template-columns: repeat(2 , 1fr);
+}
+.grid-container.three-column {
+ grid-template-columns: repeat(3 , 1fr);
+}
+.grid-container.four-column {
+ grid-template-columns: repeat(4 , 1fr);
+}
+
+@media (max-width: 1024px) {
+    .grid-container.three-column, 
+    .grid-container.four-column {
+        grid-template-columns: repeat(2 , 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-container.two-column, 
+    .grid-container.three-column,
+    .grid-container.four-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+body {
+    background-color: black;
+}
+
+h1, h2, h3, h4 {
+    font-size: 24px;
     color: white;
 }
 
-h1{
-    margin: 0 auto;
-    text-align: center;
-}
-
-h2 {
-    margin: 0 auto;
-    text-align: center;
-}
-
-article {
-    display: flex;
-    justify-content: space-around;
-    flex-flow: column;
-}
-
-div {
-    margin: 0 auto;
-    align-self: center;
-
-}
-
-section {
-    min-height: 100vh;
-    min-width: 100vw;
-    z-index: 1;
-}
-
-#autoAdd {
-    position: fixed;
-    top: -100vh;
-    left: -100vw;
-    background-color: #f3f3f3;
-    color: #444444;
-}
-
-#autoAdd.active {
-    animation-name: topblock;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-}
-
-@keyframes topblock {
-    0%   {top: -75vh;
-        left: -75vw;}
-    25%  {top: -50vh;
-        left: -50vw;}
-    50%  {top: -25vh;
-        left: -25vw;}
-    100% {top: 0;
-        left: 0;}
-}
-
-#game {
-    position: fixed;
-    top: 100vh;
-    left: -100vw;
-    background-color: #f3f3f3;
-    color: #444444;
-}
-
-#game.active {
-    animation-name: bottomblock;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-}
-
-@keyframes bottomblock {
-    0%   {top: 75vh;
-        left: -75vw;}
-    25%  {top: 55vh;
-        left: -55vw;}
-    50%  {top: 25vh;
-        left: -25vw;}
-    100% {top: 0;
-        left: 0;}
-}
-
-#grid {
-    position: fixed;
-    top: -100vh;
-    left: 100vw;
-    background-color: #f3f3f3;
-    color: #444444;
-}
-
-#grid.active{
-    animation-name: toprightblock;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-}
-
-@keyframes toprightblock {
-    0%   {top: -75vh;
-        left: 75vw;}
-    25%  {top: -50vh;
-        left: 50vw;}
-    50%  {top: -25vh;
-        left: 25vw;}
-    100% {top: 0;
-        left: 0;}
-}
-
-#dim {
-    position: fixed;
-    /*top: 100vh;
-    left: 100vw;*/
-    background-color: #f3f3f3;
-    color: #444444;
-}
-
-#dim.active {
-    animation-name: phpblock;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    height: 100vh;
-    width: 100vw;
-}
-
-@keyframes phpblock {
-    0%   {top: 75vh;
-        left: 75vw;}
-    25%  {top: 50vh;
-        left: 50vw;}
-    50%  {top: 25vh;
-        left: 25vw;}
-    100% {top: 0;
-        left: 0;}
-}
-
-.button {
-    display: flex;
-    justify-content: space-between;
-    flex-flow: column;
-}
-
-.button > div {
-    background-color: #f3f3f3;
-    border-radius: 5px;
-    padding: 10px 20px;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-    font-weight: 900;
-    color: #000000;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.red {
-    color: red;
-}
-
-.blue {
-    color: blue;
-}
-
-.green {
+a {
     color: green;
 }
 
-.btn {
-    border-radius: 5px;
-    padding: 10px 20px;
-    text-align: center;
-    margin-top: 10px;
-    font-weight: 900;
-    color: #ffffff;
-    background-color: lightskyblue;
+a:hover {
+    color: black;
+    background-color: green;
 }
 
-.btn:hover {
-    background-color: cornflowerblue;
+nav {
+    background: white;
+    position: sticky;
+}
+
+article {
+    font-size: 16px;
+    padding: 1rem;
+    color: white;
 }
