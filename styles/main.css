@@ -23,15 +23,19 @@
  grid-template-columns: repeat(4 , 1fr);
 }
 
-@media (max-width: 1024px) {
-    .grid-container.three-column, 
+.grid-block.grid-block-full {
+  grid-column-start: span 4;
+}
+
+@media (max-width: 1440px) {
+    .grid-container.three-column,
     .grid-container.four-column {
         grid-template-columns: repeat(2 , 1fr);
     }
 }
 
-@media (max-width: 640px) {
-    .grid-container.two-column, 
+@media (max-width: 999px) {
+    .grid-container.two-column,
     .grid-container.three-column,
     .grid-container.four-column {
         grid-template-columns: 1fr;
@@ -65,4 +69,16 @@ article {
     font-size: 16px;
     padding: 1rem;
     color: white;
+}
+
+pre {
+  margin: 1rem 0;
+  color: red;
+}
+
+.hp-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
