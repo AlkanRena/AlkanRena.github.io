@@ -2,15 +2,27 @@
     <html lang="en">
         <head>
             <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>CSS Hacks /\ Niebieski Kwiat i Kolce | Dawid Kubić</title>
-            <link rel="stylesheet" type="text/css" href=../styles/reset.css">
+            <link rel="stylesheet" type="text/css" href="../styles/reset.css">
             <link rel="stylesheet" type="text/css" href="../styles/main.css">
         </head>
     <body>
-        <nav>casc</nav>
         <main class="grid-container three-column">
-            <article>Zgodnie z tym co cześć osób mówi CSS jest po prostu trudny ale cóż trzeba coś robić z życiem. W tym miejsu będą się pojawiać piękne hacks do tego języka. Tak będę z całym szacunkiem mówic do tego język po przecież na to zasługuje w końcu jeżeli byłeś na kursie wiesz że chwilę trzeba się go uczyć. Wracając do tematu na tutejsze stronie będą pojawiać się hacks CSS.</article>
-            <article>Więcej wkrótce :) chyba się uda.</article>
+            <article class="grid-block grid-block-full">Zgodnie z tym co cześć osób mówi CSS jest po prostu trudny ale cóż trzeba coś robić z życiem. W tym miejsu będą się pojawiać piękne hacks do tego języka. Tak będę z całym szacunkiem mówić do tego język po przecież na to zasługuje w końcu jeżeli byłeś na kursie wiesz że chwilę trzeba się go uczyć. Wracając do tematu na tutejszej stronie będą pojawiać się hacksy CSS.</article>
+            <article>
+              <span>Pierwszy mało oczywisty a jednak użyteczny:</span>
+
+              <pre>
+.horizontal-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}</pre>
+
+              <span>Powyższy kod wyrówna nam wszystko horyzontalnie oraz wertykalnie.</span>
+            </article>
         </main>
         <a href="../index.html"> Wróć </a>
     </body>
