@@ -14,6 +14,10 @@
             display: flex;
             justify-content: space-around;
         }
+        span, p {
+            font-family: 'Press Start 2P', sans-serif;
+            line-height: 24px;
+        }
         .cash {
             max-width: 300px;
             display: flex;
@@ -71,8 +75,57 @@
             height: 100px;
             text-align: center;
         }
+        .special-input.missing-value {
+            border: 2px solid red;
+        }
         .cash .special-input {
             width: 200px;
+        }
+        .fraction-box {
+            position: relative;
+        }
+        .top-fraction-value-lowered {
+            position: absolute;
+            color: white;
+            top: -15px;
+            right: -15px;
+            font-size: 30px;
+        }
+        .bottom-fraction-value-lowered {
+            position: absolute;
+            color: white;
+            top: -15px;
+            right: -15px;
+            font-size: 30px;
+        }
+        .strike-fraction {
+            position: absolute;
+            color: red;
+            top: 40px;
+            left: 17px;
+            opacity: 0.5;
+            font-size: 80px;
+            display: none;
+        }
+        .strike-fraction.show {
+            display: inline-block;
+        }
+        .error-block {
+            display: none;
+        }
+        .error-block img {
+            width: 250px;
+            margin: 0 auto;
+            display: block;
+        }
+        .error-block p {
+            text-align: center;
+            font-size: 30px;
+            color: red;
+            line-height: 30px;
+        }
+        .error-block.show {
+            display: initial;
         }
         </style>
     </head>
@@ -102,6 +155,10 @@
                 <button class="counter">Policz</button>
             </div>
         </section>
+        <section class="error-block">
+            <img src="https://i1.memy.pl/obrazki/01c21073841_no_i_w_pizdu_i_wyladowal.jpg" alt="">
+            <p>No weź to popraw, nie potrafie liczyć bez danych.</p>
+        </section>
         <section>
             <div class="cash">
                 <input class="special-input cash-value" type="text" disabled>
@@ -110,8 +167,16 @@
                 <input class="special-input" type="text" disabled value="*">
             </div>
             <div class="fraction">
-                <input class="special-input top-fraction-value" type="text" disabled>
-                <input class="special-input bottom-fraction-value" type="text" disabled>
+                <div class="fraction-box">
+                    <input class="special-input top-fraction-value" type="text" disabled>
+                    <span class="strike-fraction">X</span>
+                    <span class="top-fraction-value-lowered"></span>
+                </div>
+                <div class="fraction-box">
+                    <input class="special-input bottom-fraction-value" type="text" disabled>
+                    <span class="strike-fraction">X</span>
+                    <span class="bottom-fraction-value-lowered"></span>
+                </div>
             </div>
             <div class="signs">
                 <input class="special-input" type="text" disabled value="=">
@@ -140,13 +205,74 @@
                     var value3 = parseFloat( data3.val() );
                     var value4 = parseFloat( data4.val() );
                     var value5 = parseFloat( data5.val() );
+
+                    if (!value1) {
+                        data1.addClass('missing-value');
+                    }
+                    if (!value2) {
+                        data2.addClass('missing-value');
+                    }
+                    if (!value3) {
+                        data3.addClass('missing-value');
+                    }
+                    if (!value4) {
+                        data4.addClass('missing-value');
+                    }
+                    if (!value5) {
+                        data5.addClass('missing-value');
+                    }
+                    if (!value1 || !value2 || !value3 || !value4 || !value5) {
+                        $('.error-block').addClass('show');
+                        return false;
+                    }
+                    $('.missing-value').removeClass('missing-value');
+                    $('.error-block').removeClass('show');
                     var topFractionValue = value2 * value4;
                     var bottomFractionValue = value3 * value5;
                     var final_result = value1 * ( topFractionValue / bottomFractionValue );
-                    console.log(final_result)
+                    var topFractionValueLowered = false;
+                    var bottomFractionValueLowered = false;
+                    
+                    function lowerNumbers (value1 , value2 ) {
+                        if (value1 % 7 == 0 && value2 % 7 == 0)
+                        {
+                            topFractionValueLowered    = value1 / 7;
+                            bottomFractionValueLowered = value2 / 7;
+                        } else if (value1 % 5 == 0 && value2 % 5 == 0)
+                        {
+                            topFractionValueLowered    = value1 / 5;
+                            bottomFractionValueLowered = value2 / 5;
+                        } else if (value1 % 3 == 0 && value2 % 3 == 0)
+                        {
+                            topFractionValueLowered    = value1 / 3;
+                            bottomFractionValueLowered = value2 / 3;
+                        } else if (value1 % 2 == 0 && value2 % 2 == 0)
+                        {
+                            topFractionValueLowered    = value1 / 2;
+                            bottomFractionValueLowered = value2 / 2;
+                        } else {
+                            return true;
+                        }
+
+                        if (lowerNumbers(topFractionValueLowered, bottomFractionValueLowered)) {
+                            return true;
+                        } else {
+                            lowerNumbers(topFractionValueLowered, bottomFractionValueLowered);
+                        }
+                    }
+                    if (lowerNumbers(topFractionValue, bottomFractionValue) && topFractionValueLowered && bottomFractionValueLowered) {
+                        $(".top-fraction-value-lowered").text(topFractionValueLowered);
+                        $(".bottom-fraction-value-lowered").text(bottomFractionValueLowered);
+                        $(".strike-fraction").addClass('show');
+                        $(".top-fraction-value").val(topFractionValue);
+                        $(".bottom-fraction-value").val(bottomFractionValue);
+                    } else {
+                        $(".strike-fraction").removeClass('show');
+                        $(".top-fraction-value").val(topFractionValue);
+                        $(".bottom-fraction-value").val(bottomFractionValue);
+                    }
                     $(".cash-value").val(value1)
-                    $(".top-fraction-value").val(topFractionValue)
-                    $(".bottom-fraction-value").val(bottomFractionValue)
+                    final_result = final_result.toFixed(2);
                     $(".result").val(final_result)
                 })
             });
