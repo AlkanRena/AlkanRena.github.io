@@ -1,0 +1,155 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kalkulator</title>
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="../styles/reset.css">
+        <link rel="stylesheet" type="text/css" href="../styles/main.css">
+        <style>
+        /* special style */
+        section {
+            margin: 3rem auto;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .cash {
+            max-width: 300px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+        .fraction {
+            max-width: 300px;
+            min-height: 250px;
+            display: flex;
+            flex-flow: column;            
+            justify-content: space-between;
+        }
+        .signs {
+            max-width: 300px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+        .count {
+            width: 100px;
+            height: 250px;
+        }
+        .count .counter {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: #ccc;
+            box-shadow: 1px 1px 2px 0 white;
+            transition: 1s;
+            cursor: pointer;
+        }
+        .count .counter:hover { 
+            background-color: white;
+            margin-top: -4px;
+            margin-left: -4px;
+            box-shadow: 8px 8px 4px 0 #ccc;
+        }
+        .img-container {
+            width: 100px;
+        }
+        .img-container img {
+            width: 200px;
+            height: auto;
+            margin: 50px;
+            margin-left: -50px;
+        }
+        .special-input {
+            border: none;
+            border-bottom: 2px solid white;
+            background-color: #1f1f1f;
+            color: white;
+            font-size: 20px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+        .cash .special-input {
+            width: 200px;
+        }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Kalkulator</h1>
+        </main>
+        <section>
+            <div class="cash">
+                <input class="special-input data-1" type="text">
+            </div>
+            <div class="signs">
+                <input class="special-input" type="text" disabled value="*">
+            </div>
+            <div class="fraction">
+                <input class="special-input data-2" type="text">
+                <input class="special-input data-3" type="text">
+            </div>
+            <div class="signs">
+                <input class="special-input" type="text" disabled value="*">
+            </div>
+            <div class="fraction">
+                <input class="special-input data-4" type="text">
+                <input class="special-input data-5" type="text">
+            </div>
+            <div class="count">
+                <button class="counter">Policz</button>
+            </div>
+        </section>
+        <section>
+            <div class="cash">
+                <input class="special-input cash-value" type="text" disabled>
+            </div>
+            <div class="signs">
+                <input class="special-input" type="text" disabled value="*">
+            </div>
+            <div class="fraction">
+                <input class="special-input top-fraction-value" type="text" disabled>
+                <input class="special-input bottom-fraction-value" type="text" disabled>
+            </div>
+            <div class="signs">
+                <input class="special-input" type="text" disabled value="=">
+            </div>
+            <div class="cash">
+                <input class="special-input result" type="text" disabled>
+            </div>
+            <div class="img-container">
+                <img src="https://i.imgflip.com/kw17v.jpg" alt="">
+            </div>
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $( document ).ready(function() {
+                var data1 = $(".data-1"); 
+                var data2 = $(".data-2"); 
+                var data3 = $(".data-3"); 
+                var data4 = $(".data-4"); 
+                var data5 = $(".data-5");
+                
+                var counter = $(".counter")
+
+                counter.on('click', function(){
+                    var value1 = parseFloat( data1.val() );
+                    var value2 = parseFloat( data2.val() );
+                    var value3 = parseFloat( data3.val() );
+                    var value4 = parseFloat( data4.val() );
+                    var value5 = parseFloat( data5.val() );
+                    var topFractionValue = value2 * value4;
+                    var bottomFractionValue = value3 * value5;
+                    var final_result = value1 * ( topFractionValue / bottomFractionValue );
+                    console.log(final_result)
+                    $(".cash-value").val(value1)
+                    $(".top-fraction-value").val(topFractionValue)
+                    $(".bottom-fraction-value").val(bottomFractionValue)
+                    $(".result").val(final_result)
+                })
+            });
+        </script>
+    </body>
+</html>
